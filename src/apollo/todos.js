@@ -19,3 +19,21 @@ export const ADD_TODO = gql`
     }
   }
 `;
+
+export const UPDATE_TODO = gql`
+  mutation UpdateTodo($id: ID!, $completed: Boolean) {
+    updateTodo(id: $id, completed: $completed) {
+      id
+      title
+      completed
+    }
+  }
+`;
+
+export const DELETE_TODO = gql`
+  mutation DeleteTodo($id: ID!) {
+    removeTodo(id: $id) {
+      id
+    }
+  }
+`;
